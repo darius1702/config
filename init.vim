@@ -187,23 +187,13 @@ command! -nargs=0 Prettier :CocCommand prettier.formatFile
 "hi! link SignColumn LineNr
 
 
-""""""fzf""""""
+" more fzf
 nmap <silent><leader>/ :Lines<cr>
 nmap <silent><C-p> :Files<cr>
-"""""""""""""""
 
-"""""""""goyo"""""""""
+" goyo
 " let g:goyo_linenr = 1
 let g:goyo_width = "80%"
 let g:goyo_heigth = "80%"
 
 map <silent><leader>g :Goyo<cr>
-
-"Transparent background after exiting goyo
-function! s:goyo_leave()
-  "  hi! Normal ctermbg=NONE guibg=NONE
-  "  hi! NonText ctermbg=NONE guibg=NONE guifg=NONE ctermfg=NONE
-  "  hi! link LineNr guibg
-  "  hi! link SignColumn LineNr
-endfunction
-autocmd! User GoyoLeave nested call <SID>goyo_leave()
