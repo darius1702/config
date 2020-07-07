@@ -15,7 +15,7 @@ Plug 'junegunn/seoul256.vim'      " seoul256
 Plug 'jnurmine/Zenburn'           " zenburn
 Plug 'arzg/vim-colors-xcode'      " xcodedark, xcodedarkhc, xcodewwdc
 " Syntax
-" Plug 'jiangmiao/auto-pairs'      covered by coc-pairs
+Plug 'jiangmiao/auto-pairs'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Lightline
 Plug 'itchyny/lightline.vim'
@@ -167,6 +167,7 @@ command! -nargs=0 Prettier :CocCommand prettier.formatFile
 
 """"""fzf""""""
 nmap <silent><leader>/ :Lines<cr>
+nmap <silent><C-p> :Files<cr>
 """""""""""""""
 
 """""""""goyo"""""""""
