@@ -99,10 +99,10 @@ autocmd BufWritePre * %s/\s\+$//e
   set t_Co=256
 "endif
 
-hi! Normal ctermbg=NONE guibg=NONE
-hi! NonText ctermbg=NONE guibg=NONE guifg=NONE ctermfg=NONE
-hi! link LineNr guibg
-hi! link SignColumn LineNr
+"hi! Normal ctermbg=NONE guibg=NONE
+"hi! NonText ctermbg=NONE guibg=NONE guifg=NONE ctermfg=NONE
+"hi! link LineNr guibg
+"hi! link SignColumn LineNr
 
 
 """"""fzf""""""
@@ -118,9 +118,9 @@ map <silent><leader>g :Goyo<cr>
 
 "Transparent background after exiting goyo
 function! s:goyo_leave()
-  hi! Normal ctermbg=NONE guibg=NONE
-  hi! NonText ctermbg=NONE guibg=NONE guifg=NONE ctermfg=NONE
-  hi! link LineNr guibg
-  hi! link SignColumn LineNr
+"  hi! Normal ctermbg=NONE guibg=NONE
+"  hi! NonText ctermbg=NONE guibg=NONE guifg=NONE ctermfg=NONE
+"  hi! link LineNr guibg
+"  hi! link SignColumn LineNr
 endfunction
 autocmd! User GoyoLeave nested call <SID>goyo_leave()
