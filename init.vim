@@ -14,6 +14,7 @@ Plug 'gruvbox-community/gruvbox'  " gruvbox
 Plug 'junegunn/seoul256.vim'      " seoul256
 Plug 'jnurmine/Zenburn'           " zenburn
 Plug 'arzg/vim-colors-xcode'      " xcodedark, xcodedarkhc, xcodewwdc
+Plug 'rakr/vim-two-firewatch'     " two-firewatch
 " Syntax
 Plug 'jiangmiao/auto-pairs'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -102,6 +103,9 @@ map <C-h> <C-w>h
 map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-l> <C-w>l
+
+" Rg
+let g:rg_highlight = "true"
 
 " Customize fzf colors to match your color scheme
 " - fzf#wrap translates this to a set of `--color` options
