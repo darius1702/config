@@ -30,12 +30,17 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 call plug#end()
 
+if exists("+termguicolors")
+   let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+   let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+endif
+let g:zenburn_italic_Comment=0
+let g:gruvbox_contrast_dark = "hard"
+let g:gruvbox_invert_selection = 0
+
 colorscheme xcodedark
 set bg=dark
 set termguicolors
-
-let g:zenburn_italic_Comment=0
-
 set scrolloff=3
 set matchpairs+=<:>
 set signcolumn=auto
@@ -101,7 +106,7 @@ map <C-l> <C-w>l
 autocmd BufWritePre * %s/\s\+$//e
 
 "if !has('gui_running')
-  set t_Co=256
+set t_Co=256
 "endif
 
 
@@ -179,9 +184,9 @@ map <silent><leader>g :Goyo<cr>
 
 "Transparent background after exiting goyo
 function! s:goyo_leave()
-"  hi! Normal ctermbg=NONE guibg=NONE
-"  hi! NonText ctermbg=NONE guibg=NONE guifg=NONE ctermfg=NONE
-"  hi! link LineNr guibg
-"  hi! link SignColumn LineNr
+  "  hi! Normal ctermbg=NONE guibg=NONE
+  "  hi! NonText ctermbg=NONE guibg=NONE guifg=NONE ctermfg=NONE
+  "  hi! link LineNr guibg
+  "  hi! link SignColumn LineNr
 endfunction
 autocmd! User GoyoLeave nested call <SID>goyo_leave()
