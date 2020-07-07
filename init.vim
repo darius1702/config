@@ -87,6 +87,7 @@ set clipboard+=unnamedplus
 set ignorecase
 " set smartcase
 set nocompatible
+au BufEnter * set fo-=c fo-=r fo-=o
 filetype plugin on
 syntax on
 set encoding=utf-8
