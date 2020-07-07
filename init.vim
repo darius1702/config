@@ -22,12 +22,13 @@ Plug 'itchyny/lightline.vim'
 Plug 'itchyny/vim-gitbranch'
 " Git
 Plug 'airblade/vim-gitgutter'
-" UI
+" Other
 Plug 'preservim/nerdtree'
 Plug 'preservim/nerdcommenter'
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
+Plug 'jremmen/vim-ripgrep'
 call plug#end()
 
 if exists("+termguicolors")
