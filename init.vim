@@ -13,6 +13,7 @@ Plug 'arcticicestudio/nord-vim'   " nord
 Plug 'gruvbox-community/gruvbox'  " gruvbox
 Plug 'junegunn/seoul256.vim'      " seoul256
 Plug 'jnurmine/Zenburn'           " zenburn
+Plug 'arzg/vim-colors-xcode'      " xcodedark, xcodedarkhc, xcodewwdc
 " Syntax
 Plug 'jiangmiao/auto-pairs'
 " Lightline
@@ -28,7 +29,7 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 call plug#end()
 
-colorscheme seoul256
+colorscheme xcodedark
 set bg=dark
 set termguicolors
 
@@ -40,11 +41,11 @@ set signcolumn=auto
 
 set clipboard=unnamedplus
 
-nnoremap <silent><leader>t :sp +term<CR>
+nnoremap <silent><leader>t :8sp +term<CR>
 tnoremap <silent><ESC> <C-\><C-n>
 
 let g:lightline = {
-      \ 'colorscheme': 'seoul256',
+      \ 'colorscheme': 'wombat',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
       \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
@@ -62,7 +63,7 @@ set shiftwidth=2
 set softtabstop=2
 set autoindent
 set smartindent
-" set hidden
+set hidden
 set nobackup
 set nowritebackup
 set cmdheight=1
@@ -94,9 +95,9 @@ map <C-l> <C-w>l
 " Automatically deletes all trailing whitespace on save.
 autocmd BufWritePre * %s/\s\+$//e
 
-if !has('gui_running')
+"if !has('gui_running')
   set t_Co=256
-endif
+"endif
 
 hi! Normal ctermbg=NONE guibg=NONE
 hi! NonText ctermbg=NONE guibg=NONE guifg=NONE ctermfg=NONE
