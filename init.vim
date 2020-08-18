@@ -1,7 +1,6 @@
 let mapleader = "\<space>"
 
 if ! filereadable(expand('~/.config/nvim/autoload/plug.vim'))
-  echo "Downloading junegunn/vim-plug to manage plugins..."
   silent !mkdir -p ~/.config/nvim/autoload/
   silent !curl "https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim" > ~/.config/nvim/autoload/plug.vim
 endif
@@ -11,6 +10,7 @@ call plug#begin('~/.config/nvim/plugged')
 Plug 'joshdick/onedark.vim'       " onedark
 Plug 'arcticicestudio/nord-vim'   " nord
 Plug 'gruvbox-community/gruvbox'  " gruvbox
+Plug 'sainnhe/gruvbox-material'   " gruvbox-material
 Plug 'junegunn/seoul256.vim'      " seoul256
 Plug 'jnurmine/Zenburn'           " zenburn
 Plug 'arzg/vim-colors-xcode'      " xcodedark, xcodedarkhc, xcodewwdc
@@ -18,6 +18,7 @@ Plug 'rakr/vim-two-firewatch'     " two-firewatch
 " Syntax
 Plug 'jiangmiao/auto-pairs'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'sheerun/vim-polyglot'
 " Lightline
 Plug 'itchyny/lightline.vim'
 Plug 'itchyny/vim-gitbranch'
@@ -32,6 +33,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'jremmen/vim-ripgrep'
 call plug#end()
 
+set termguicolors
 if exists("+termguicolors")
    let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
    let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
@@ -39,10 +41,11 @@ endif
 let g:zenburn_italic_Comment=0
 let g:gruvbox_contrast_dark = "hard"
 let g:gruvbox_invert_selection = 0
+" let g:gruvbox_material_background = "hard"
+let g:gruvbox_material_disable_italic_comment = 1
 
-colorscheme xcodedark
+colorscheme gruvbox
 set bg=dark
-set termguicolors
 set scrolloff=3
 set matchpairs+=<:>
 set signcolumn=auto
@@ -236,7 +239,6 @@ command! -nargs=0 Prettier :CocCommand prettier.formatFile
 nmap <silent><leader>/ :Lines<cr>
 nmap <silent><C-p> :Files<cr>
 
-" floating fzf window with borders
 function! CreateCenteredFloatingWindow()
     let width = min([&columns - 4, max([80, &columns - 20])])
     let height = min([&lines - 4, max([20, &lines - 10])])
