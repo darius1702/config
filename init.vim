@@ -41,11 +41,11 @@ endif
 let g:zenburn_italic_Comment=0
 let g:gruvbox_contrast_dark = "hard"
 let g:gruvbox_invert_selection = 0
-" let g:gruvbox_material_background = "hard"
+let g:gruvbox_material_background = "hard"
 let g:gruvbox_material_disable_italic_comment = 1
 
-colorscheme gruvbox
 set bg=dark
+colorscheme gruvbox-material
 set scrolloff=3
 set matchpairs+=<:>
 set signcolumn=auto
