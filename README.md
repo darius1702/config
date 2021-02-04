@@ -1,2 +1,2 @@
 # config
-dotfiles etc
+iterm2 mac
